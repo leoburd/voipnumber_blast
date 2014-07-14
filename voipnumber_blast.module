@@ -95,7 +95,7 @@ function voipnumber_blast_get_numbers_from_groups($groups) {
     if($group['value'] == 'all') {
       return voipnumber_blast_get_all_numbers();
     }
-    $nids = taxonomy_select_nodes($group['value']);
+    $nids = taxonomy_select_nodes($group['value'], FALSE);
     $all_nids = array_merge((array)$all_nids, (array)$nids);
   }
 
@@ -117,7 +117,7 @@ function voipnumber_blast_get_nids_from_groups($groups) {
     if($group['value'] == 'all') {
       return voipnumber_blast_get_all_phone_nids();
     }
-    $nids = taxonomy_select_nodes($group['value']);
+    $nids = taxonomy_select_nodes($group['value'], FALSE);
     $all_nids = array_merge((array)$all_nids, (array)$nids);
   }
   $return_nids = array();
